@@ -1,7 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-//1½Ã°£ 28ºÐ
 public class Solution {
 
 	static int D, W, K;
@@ -14,12 +13,12 @@ public class Solution {
 
 		for(int iiiii=1; iiiii<=T; iiiii++)
 		{
-			//ÀÔ·Â ¹Þ±â
+			//ï¿½Ô·ï¿½ ï¿½Þ±ï¿½
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			
-			D = Integer.parseInt(st.nextToken());	//µÎ²²
-			W = Integer.parseInt(st.nextToken());	//°¡·ÎÅ©±â
-			K = Integer.parseInt(st.nextToken());	//ÇÕ°Ý±âÁØ
+			D = Integer.parseInt(st.nextToken());	//ï¿½Î²ï¿½
+			W = Integer.parseInt(st.nextToken());	//ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½
+			K = Integer.parseInt(st.nextToken());	//ï¿½Õ°Ý±ï¿½ï¿½ï¿½
 			
 			film = new int[D][W];
 			original_film = new int[D][W];
@@ -34,35 +33,35 @@ public class Solution {
 				}
 			}
 			
-			//Á¶ÇÕÀ¸·Î Å½»öÇÏ±â
-			int num = 0;		//Á¶ÇÕ °í¸¦ ¼ö
-			ArrayList<Injection> list = new ArrayList<Injection>();		//Á¶ÇÕÀ» ´ãÀ» ¸®½ºÆ®
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½Ï±ï¿½
+			int num = 0;		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
+			ArrayList<Injection> list = new ArrayList<Injection>();		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 			
-			while(num<D)		//Á¶ÇÕ½Ã µ¿½Ã¿¡ °í¸¦ ¼ö ÀÖ´Â ¸·ÀÇ ÃÖ´ë ¼ö : D°³
+			while(num<D)		//ï¿½ï¿½ï¿½Õ½ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ : Dï¿½ï¿½
 			{
-				if(Combination(0, list, num) == true)		break;		//°Ë»ç±âÁØ Åë°úÇÏ¸é ºüÁ®³ª¿À±â
+				if(Combination(0, list, num) == true)		break;		//ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				num++;
 			}		
 			
-			System.out.println("#"+iiiii+" "+num);		//°á°ú Ãâ·Â
+			System.out.println("#"+iiiii+" "+num);		//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		}
 	}
 
-	//ÆÄ¶ó¹ÌÅÍ : Á¶ÇÕ ÀÎµ¦½º, Á¶ÇÕÀ» ´ãÀ» ¹è¿­, ÃÖ´ë °í¸¦ ¼ö
-	static boolean Combination(int idx, ArrayList<Injection> list, int n)		//n°³ÀÇ ¼ö¸¦ °í¸£´Â Á¶ÇÕ
+	//ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­, ï¿½Ö´ï¿½ ï¿½ï¿½ ï¿½ï¿½
+	static boolean Combination(int idx, ArrayList<Injection> list, int n)		//nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	{
 		boolean result = false;
 		
-		if(n == 0)			//0ÀÌ¸é ¹Ù·Î ÀÌ°ÅÇÔ
+		if(n == 0)			//0ï¿½Ì¸ï¿½ ï¿½Ù·ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½
 		{
 			if(check() == true)
 				return true;
 			else	return false;
 		}
 		
-		if(n == list.size())		//n°³ÀÇ ¸·À» ´Ù °ñ¶úÀ» °æ¿ì
+		if(n == list.size())		//nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		{
-			//Á÷Á¢ ³Ö¾îº¸±â : list¿¡´Â °í¸¦ ÀÎµ¦½ºµé°ú ¾àÇ° »óÅÂ°¡ µé¾îÀÖÀ½
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾îº¸ï¿½ï¿½ : listï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			
 			for(Injection a : list)
 			{
@@ -70,20 +69,11 @@ public class Solution {
 					film[a.no][j] = a.stat;
 			}
 			
-//			//for test
-//			System.out.println("n : " + n);
-//			for(int i=0; i<D; i++)
-//			{
-//				for(int j=0; j<W; j++)
-//					System.out.print(film[i][j]+" ");
-//				System.out.println();
-//			}
-//			System.out.println();
 			
 			if(check() == true)
 				return true;
 			
-			//ÇÊ¸§ ¿ø»óÅÂ·Î µ¹¸®±â
+			//ï¿½Ê¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			for(Injection a : list)
 			{
 				for(int j=0; j<W; j++)
@@ -95,14 +85,14 @@ public class Solution {
 		
 		for(int i=idx; i<D; i++)
 		{
-			//°°ÀºÀÎµ¦½º, A¾à¹°
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½, Aï¿½à¹°
 			Injection temp = new Injection(i, 0);
 			list.add(temp);
 			result = Combination(i+1, list, n);
 			if(result == true)	return true;
 			list.remove(list.size()-1);
 			
-			//°°ÀºÀÎµ¦½º, B¾à¹°
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½, Bï¿½à¹°
 			temp = new Injection(i, 1);
 			list.add(temp);
 			result = Combination(i+1, list, n);
@@ -113,32 +103,32 @@ public class Solution {
 		return result;
 	}
 	
-	static boolean check()				//ÇÕ°Ý±âÁØÀ» ¸¸Á·ÇÏ´ÂÁö °Ë»ç. ÇÊ¸§ ÀüÃ¼°¡ ±âÁØÀ» ¸¸Á·ÇÏ¸é true return
+	static boolean check()				//ï¿½Õ°Ý±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½. ï¿½Ê¸ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ true return
 	{
 		boolean result = true;
 		
-		for(int j=0; j<W; j++)			//¼¼·Î¹æÇâ¿¡¼­ K°³ ÀÌ»ó ¿¬¼ÓÀûÀÎ Æ¯Â¡ÀÌ ÀÖÀ¸¸é Åë°ú
+		for(int j=0; j<W; j++)			//ï¿½ï¿½ï¿½Î¹ï¿½ï¿½â¿¡ï¿½ï¿½ Kï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯Â¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		{
-			int prev = film[0][j];		//ºñ±³ÇÏ±â À§ÇÑ ÃÊ±â°ª
+			int prev = film[0][j];		//ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±â°ª
 			int count = 1;
 			
 			for(int i=1; i<D; i++)
 			{
-				int cur = film[i][j];	//ÇöÀç °ª
-				if(prev == cur)			//¿¬¼ÓµÇ¾ú´Ù¸é
+				int cur = film[i][j];	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				if(prev == cur)			//ï¿½ï¿½ï¿½ÓµÇ¾ï¿½ï¿½Ù¸ï¿½
 				{
 					count++;
-					if(count == K)		//ÇØ´ç ¸éÀÌ ±âÁØÀ» ¸¸Á·ÇÏ¸é ´ÙÀ½ columnÀ¸·Î ³Ñ¾î°¡¼­ °Ë»ç
+					if(count == K)		//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ columnï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½Ë»ï¿½
 						break;
 				}
-				else			//¿¬¼ÓµÇÁö ¾Ê¾Ò´Ù¸é
+				else			//ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ ï¿½Ê¾Ò´Ù¸ï¿½
 				{
-					//ÃÊ±âÈ­
+					//ï¿½Ê±ï¿½È­
 					prev = cur;
 					count = 1;
 				}
-			}//ÇÑ column ³¡		
-			if(count != K)		//ÇÏ³ªÀÇ column¶óµµ ¸¸Á· ¸øÇÏ¸é ½ÇÆÐ
+			}//ï¿½ï¿½ column ï¿½ï¿½		
+			if(count != K)		//ï¿½Ï³ï¿½ï¿½ï¿½ columnï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 				return false;
 		}
 		
@@ -149,7 +139,7 @@ public class Solution {
 class Injection
 {
 	int no;
-	int stat;	//¾à¹° Æ¯¼º
+	int stat;	//ï¿½à¹° Æ¯ï¿½ï¿½
 	Injection(){};
 	Injection(int no, int stat)
 	{
